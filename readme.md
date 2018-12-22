@@ -87,5 +87,5 @@ Rick Warling
 
 Credits to:
 
-- Udacity Project4 Concepts section
+- Udacity Project5 Concepts section
 - Udacity slack of nanodegree
