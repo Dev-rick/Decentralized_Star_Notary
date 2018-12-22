@@ -17,13 +17,21 @@ contract('StarNotary', accounts => {
 
     // createStar test
     describe('can create a star', () => {
-        it('create a star', async function () {
+        it('create a star and get data', async function () {
             await this.contract.createStar(name, starStory, ra, dec, mag, {from: user1});
+            let askedStar = await this.contract.tokenIdToStarInfos(tokenId);
 
-            // test tokenIdToStarInfo() method
-            it('get the stars data', async function() {
-                assert.deepEqual(await this.contract.tokenIdToStarInfo(tokenId), [name, starStory, ra, dec, mag]);
-            });
+            askedName = askedStar[0].toString()
+            askedStory = askedStar[1].toString()
+            askedRa = askedStar[2].toString()
+            askedDec = askedStar[3].toString()
+            askedMag = askedStar[4].toString()
+
+            assert.equal(askedName, name)
+            assert.equal(askedStory, starStory)
+            assert.equal(askedRa, ra)
+            assert.equal(askedDec, dec)
+            assert.equal(askedMag, mag)
         })
     })
 

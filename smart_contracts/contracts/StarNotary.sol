@@ -76,7 +76,7 @@ contract StarNotary is ERC721 {
         return starHashMap[generateStarHash(ra, dec, mag)];
     }
 
-    function tokenIdToStarInfos(uint256 tokenId) public constant returns(string, string, string, string, string) {
+    function tokenIdToStarInfos(uint256 tokenId) public view returns(string, string, string, string, string) {
         return (tokenIdToStarInfo[tokenId].name, tokenIdToStarInfo[tokenId].story, tokenIdToStarInfo[tokenId].coordinates.ra, tokenIdToStarInfo[tokenId].coordinates.dec, tokenIdToStarInfo[tokenId].coordinates.mag);
     }
 

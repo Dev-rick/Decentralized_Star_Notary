@@ -443,7 +443,7 @@
       }]
     )
 
-    const starNotary = StarNotary.at('0x6ccbe5fa703bc7fb6fafca25f79ed5e83d851c92')
+    const starNotary = StarNotary.at('0x4EC364327f14AEB8F36d1C47BAb93D9C7Ad6AA7c')
 
     function claimButtonClicked() {
       web3.eth.getAccounts(function(error, accounts) {
@@ -491,7 +491,7 @@
         }
         const account = accounts[0]
         const tokenId = document.getElementById("queryById").value
-        starNotary.tokenIdToStarInfo.call(tokenId, function(error, result) {
+        starNotary.tokenIdToStarInfos.call(tokenId, function(error, result) {
           if (!error) {
             alert(result)
             document.getElementById("result").value = result
