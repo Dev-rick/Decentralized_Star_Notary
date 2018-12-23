@@ -1,4 +1,5 @@
-const StarNotary = artifacts.require('StarNotary')
+const StarNotary = artifacts.require('StarNotary');
+var web3 = require('web3');
 
 contract('StarNotary', accounts => {
   let name = 'Star power 103!'
